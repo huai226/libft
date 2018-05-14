@@ -6,7 +6,7 @@
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 17:43:57 by sshih             #+#    #+#             */
-/*   Updated: 2018/05/04 17:49:27 by sshih            ###   ########.fr       */
+/*   Updated: 2018/05/13 15:11:59 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	char *substr;
+	size_t	i;
+	char	*substr;
 
 	i = 0;
 	if (s == NULL)

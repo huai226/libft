@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lower.c                                         :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/21 20:19:18 by sshih             #+#    #+#             */
-/*   Updated: 2018/04/21 20:20:47 by sshih            ###   ########.fr       */
+/*   Created: 2018/05/13 12:03:27 by sshih             #+#    #+#             */
+/*   Updated: 2018/05/13 15:09:15 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+char	*ft_strrev(char *str)
 {
-	return (c >= 'A' && c <= 'Z' ? (c + 32) : c);
+	char	temp;
+	int		len;
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	len = i - 1;
+	i = 0;
+	while (i < len)
+	{
+		temp = str[len];
+		str[len] = str[i];
+		str[i] = temp;
+		i++;
+		len--;
+	}
+	return (str);
 }

@@ -6,13 +6,13 @@
 #    By: sshih <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/23 20:51:01 by sshih             #+#    #+#              #
-#    Updated: 2018/05/08 21:52:15 by sshih            ###   ########.fr        #
+#    Updated: 2018/05/10 22:28:46 by sshih            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME =	libft.a
 
-SRC =	ft_memset.c \
+SRC	=	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
@@ -69,7 +69,13 @@ SRC =	ft_memset.c \
 		ft_lstdel.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_malloc_word.c \
+		ft_countwords.c \
+		ft_swap.c \
+		ft_search_and_replace.c \
+		ft_strrev.c \
+		ft_strlen_til.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -88,4 +94,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all, clean, fclean, re

@@ -6,7 +6,7 @@
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 14:13:51 by sshih             #+#    #+#             */
-/*   Updated: 2018/05/04 14:18:03 by sshih            ###   ########.fr       */
+/*   Updated: 2018/05/13 15:14:21 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memalloc(size_t size)
 {
 	void	*s;
-	
+
 	s = malloc(size);
 	if (s == NULL)
 		return (NULL);

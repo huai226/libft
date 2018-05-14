@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lower.c                                         :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/21 20:19:18 by sshih             #+#    #+#             */
-/*   Updated: 2018/04/21 20:20:47 by sshih            ###   ########.fr       */
+/*   Created: 2018/05/13 11:31:22 by sshih             #+#    #+#             */
+/*   Updated: 2018/05/13 14:36:27 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int		ft_countwords(char const *str, char c)
 {
-	return (c >= 'A' && c <= 'Z' ? (c + 32) : c);
+	int i;
+
+	i = 0;
+	while (*str)
+	{
+		if (*str == c)
+			str++;
+		else
+		{
+			i++;
+			while (*str && *str != c)
+				str++;
+		}
+	}
+	return (i);
 }

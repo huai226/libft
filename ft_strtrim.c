@@ -5,25 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/07 10:34:04 by sshih             #+#    #+#             */
-/*   Updated: 2018/05/07 11:03:16 by sshih            ###   ########.fr       */
+/*   Created: 2018/05/10 23:55:32 by sshih             #+#    #+#             */
+/*   Updated: 2018/05/13 15:22:57 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int	beg_space(char const *str)
 {
-	size_t i;
-	size_t len;
+	int		i;
 
 	i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
 		i++;
-	if (s[i] == '\0')
-		return (ft_strdup(s + i));
-	len = ft_strlen(s) - 1;
-	while ((s[len] == ' ' || s[len] == '\t' || s[len] == '\n') && len > 0)
-		len--;
-		return (ft_strsub(s, i, len - i + 1));
+	return (i);
+}
+
+static int	end_space(char const *str)
+{
+	int		i;
+
+	i = ft_strlen(str);
+	if (i == 0)
+		return (0);
+	while (i > 0 && (str[i - 1] == ' ' || str[i - 1] == '\t' ||
+				str[i - 1] == '\n'))
+		i--;
+	return (i);
+}
+
+char		*ft_strtrim(char const *s)
+{
+	int		start;
+	int		str_len;
+	char	*str;
+
+	if (!s)
+		return (NULL);
+	start = beg_space(s);
+	str_len = end_space(s) - start;
+	if (str_len <= 0)
+		return (ft_strnew(0));
+	str = ft_strsub(s, start, str_len);
+	return (str);
 }

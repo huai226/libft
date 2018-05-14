@@ -6,7 +6,7 @@
 /*   By: sshih <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 14:37:41 by sshih             #+#    #+#             */
-/*   Updated: 2018/05/04 14:40:22 by sshih            ###   ########.fr       */
+/*   Updated: 2018/05/13 15:10:43 by sshih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char	*s;
-	
-	s = ft_memalloc(size);
+
+	s = ft_memalloc(size + 1);
 	return (s);
 }
